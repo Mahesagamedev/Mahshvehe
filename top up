@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top-Up Game Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Top-Up Game Digital</h1>
+  <form id="topupForm">
+    <label for="game">Pilih Game:</label>
+    <select id="game" required>
+      <option value="freefire">Free Fire</option>
+      <option value="mlbb">Mobile Legends</option>
+      <option value="pubg">PUBG Mobile</option>
+    </select><br>
+
+    <label for="playerId">Player ID:</label>
+    <input type="text" id="playerId" required><br>
+
+    <label for="jumlah">Jumlah Diamond/UC:</label>
+    <select id="jumlah">
+      <option value="50">50</option>
+      <option value="100">100</option>
+      <option value="200">200</option>
+    </select><br>
+
+    <label for="bayar">Metode Pembayaran:</label>
+    <select id="bayar">
+      <option value="dana">DANA</option>
+      <option value="gopay">GoPay</option>
+      <option value="ovo">OVO</option>
+    </select><br>
+
+    <button type="submit">Beli Sekarang</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+form {
+  max-width: 400px;
+}
+input, select, button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+document.getElementById("topupForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const game = document.getElementById("game").value;
+  const id = document.getElementById("playerId").value;
+  const jumlah = document.getElementById("jumlah").value;
+  const bayar = document.getElementById("bayar").value;
+
+  alert(`Top-up berhasil!\nGame: ${game}\nID: ${id}\nJumlah: ${jumlah}\nBayar via: ${bayar}`);
+});
